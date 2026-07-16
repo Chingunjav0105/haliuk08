@@ -153,3 +153,31 @@ footer{text-align:center;padding:20px;color:#ffd5e7}
   .proposal{grid-template-columns:1fr}.proposal p{font-size:34px}
   .counter-row strong{font-size:38px}
 }
+/* Birthday Puzzle link */
+.birthday-puzzle-panel{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(170,72,255,.34),transparent 48%),
+    linear-gradient(180deg,rgba(47,17,76,.94),rgba(16,7,36,.96));
+}
+.birthday-puzzle-panel::before{
+  content:"";position:absolute;inset:-40%;pointer-events:none;
+  background:conic-gradient(from 0deg,transparent,rgba(255,91,211,.16),transparent 32%);
+  animation:puzzleGlowSpin 9s linear infinite;
+}
+.birthday-puzzle-panel>*{position:relative;z-index:1}
+.birthday-puzzle-icon{font-size:58px;filter:drop-shadow(0 0 18px #ff69d5);animation:pulse 1.8s infinite}
+.birthday-puzzle-btn{
+  display:inline-block;margin-top:18px;padding:13px 20px;border-radius:999px;
+  color:#fff;text-decoration:none;font-weight:700;letter-spacing:1px;
+  background:linear-gradient(90deg,#7c2bd7,#d73bc0,#ff68ce);
+  border:1px solid rgba(255,205,242,.8);
+  box-shadow:0 0 24px rgba(211,68,255,.5);transition:.25s;
+}
+.birthday-puzzle-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 38px rgba(255,91,218,.8)}
+@keyframes puzzleGlowSpin{to{transform:rotate(360deg)}}
